@@ -12,13 +12,28 @@ public class Potens {
 	}
 
 	public static double potens1(double a, int n) {
-		//TODO
-		return 0.0;
+		
+		if (n == 0) { //Basistilfelle
+			return 1.0;
+		} else {
+			return a * potens1(a, n-1);
+		}
+		
 	}
 
 	public static double potens2(double a, int n) {
-		//TODO
-		return 0.0;
+		
+		if(n == 0) {
+			return 1;
+		} else {
+			if(n % 2 == 0) {
+				return potens2(a, n/2) * potens2(a, n/2);
+				
+			} else {
+				return a * potens2(a, n/2) * potens2(a, n/2);
+			}
+		}
+		
 	}
 
 }
